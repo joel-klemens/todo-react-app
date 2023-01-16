@@ -4,11 +4,32 @@ import TodoList from "./TodoList";
 import TodoListList from "./TodoListList";
 import { v4 as uuidv4 } from "uuid";
 
+//getting user id from url params
+import { Routes, Route, useParams } from "react-router-dom";
+
 //local storage keys for the to do lists and to do list items
 const LOCAL_STORAGE_KEY_items = "todoListItem";
 const LOCAL_STORAGE_KEY_lists = "todoListList";
 
 function App() {
+    return (
+        <Routes>
+            <Route path="/">
+                <Home />
+            </Route>
+            <Route path="/profilepage/:userId" element={<ProfilePage />} />
+        </Routes>
+    );
+}
+
+export default App;
+
+function ProfilePage() {
+    let { userId } = useParams();
+    return <h1>Profile Page for user {userId}</h1>;
+}
+
+function Home() {
     //the list of to do items currently selected
     const [selected, setSelected] = useState();
     //list of to do lists
@@ -209,6 +230,4 @@ function App() {
             </div>
         </div>
     );
-}
-
-export default App;
+} //end of home

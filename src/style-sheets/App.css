@@ -42,8 +42,11 @@
   align-items: center;
 }
 
-.todo-lists-list input[type=text] {
+.todo-lists-list input[type=text], .todo-list input[type=text] {
   width:100%;
+  min-height: 40px;
+  font-size: 1em;
+  padding-left: 15px;
 }
 
 .todo-lists-list h2 {
@@ -61,9 +64,6 @@
   align-items: center;
 }
 
-.todo-list input[type=text] {
-  width:100%;
-}
 
 .todo-list h2 {
   margin: 10px;
