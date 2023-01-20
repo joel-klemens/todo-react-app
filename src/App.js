@@ -11,18 +11,14 @@ import { Routes, Route, useParams } from "react-router-dom";
 const LOCAL_STORAGE_KEY_items = "todoListItem";
 const LOCAL_STORAGE_KEY_lists = "todoListList";
 
-function App() {
+export default function App() {
     return (
         <Routes>
-            <Route path="/">
-                <Home />
-            </Route>
+            <Route path="/" element={<Home />} />
             <Route path="/profilepage/:userId" element={<ProfilePage />} />
         </Routes>
     );
 }
-
-export default App;
 
 function ProfilePage() {
     let { userId } = useParams();
